@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Bites Restaurant</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Header Section -->
+    <header class="bg-white shadow-md py-4 px-6 md:px-12 flex justify-between items-center rounded-b-xl">
+        <div class="text-2xl md:text-3xl font-bold text-green-700 data-lang-key="brand-name"">Delicious Bites</div>
+        <nav class="hidden md:flex space-x-8">
+            <a href="#home" class="text-lg font-medium text-gray-700 hover:text-green-600 transition duration-300 data-lang-key="nav-home"">Home</a>
+            <a href="#menu" class="text-lg font-medium text-gray-700 hover:text-green-600 transition duration-300 data-lang-key="nav-menu"">Menu</a>
+            <a href="#about" class="text-lg font-medium text-gray-700 hover:text-green-600 transition duration-300 data-lang-key="nav-about"">About Us</a>
+            <a href="#contact" class="text-lg font-medium text-gray-700 hover:text-green-600 transition duration-300 data-lang-key="nav-contact"">Contact</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+            <button id="lang-toggle-en" class="language-toggle active" data-lang="en">EN</button>
+            <button id="lang-toggle-hi" class="language-toggle" data-lang="hi">HI</button>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-green-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden">
+        <div class="bg-white w-3/4 h-full absolute right-0 shadow-lg p-6 flex flex-col space-y-6">
+            <button id="close-mobile-menu" class="self-end text-gray-700 hover:text-green-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <a href="#home" class="text-xl font-medium text-gray-700 hover:text-green-600 transition duration-300 data-lang-key="nav-home"" onclick="closeMobileMenu()">Home</a>
+            <a href="#menu" class="text-xl font-medium text-gray-700 hover:text-green-600 transition duration-300 data-lang-key="nav-menu"" onclick="closeMobileMenu()">Menu</a>
+            <a href="#about" class="text-xl font-medium text-gray-700 hover:text-green-600 transition duration-300 data-lang-key="nav-about"" onclick="closeMobileMenu()">About Us</a>
+            <a href="#contact" class="text-xl font-medium text-gray-700 hover:text-green-600 transition duration-300 data-lang-key="nav-contact"" onclick="closeMobileMenu()">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-r from-green-600 to-green-800 text-white py-20 px-6 md:px-12 flex-grow flex items-center justify-center rounded-b-xl">
+        <div class="text-center max-w-3xl">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 data-lang-key="hero-heading"">Taste the Tradition, Savor the Innovation</h1>
+            <p class="text-lg md:text-xl mb-8 data-lang-key="hero-subheading"">Experience exquisite flavors crafted with passion and fresh ingredients.</p>
+            <a href="#menu" class="bg-white text-green-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 data-lang-key="hero-button"">Explore Our Menu</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 px-6 md:px-12 bg-gray-50">
+        <h2 class="text-4xl font-bold text-center mb-12 text-green-700 data-lang-key="menu-heading"">Our Delicious Menu</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Menu Item 1 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <img src="img/images (8).jpeg" alt="Dish 1" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800 data-lang-key="dish1-name"">Special Biryani</h3>
+                    <p class="text-gray-600 mb-4 data-lang-key="dish1-description"">Aromatic basmati rice cooked with tender meat/vegetables and exotic spices.</p>
+                    <span class="text-green-700 text-xl font-bold data-lang-key="dish1-price"">$15.99</span>
+                </div>
+            </div>
+            <!-- Menu Item 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <img src="img/download (9).jpeg" alt="Dish 2" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800 data-lang-key="dish2-name"">Paneer Tikka Masala</h3>
+                    <p class="text-gray-600 mb-4 data-lang-key="dish2-description"">Cottage cheese cubes grilled and served in a rich, creamy tomato gravy.</p>
+                    <span class="text-green-700 text-xl font-bold data-lang-key="dish2-price"">$13.50</span>
+                </div>
+            </div>
+            <!-- Menu Item 3 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <img src="download (10).jpeg" alt="Dish 3" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800 data-lang-key="dish3-name"">Chicken Curry</h3>
+                    <p class="text-gray-600 mb-4 data-lang-key="dish3-description"">Classic chicken curry slow-cooked with traditional Indian spices.</p>
+                    <span class="text-green-700 text-xl font-bold data-lang-key="dish3-price"">$16.25</span>
+                </div>
+            </div>
+            <!-- Menu Item 4 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <img src="download (11).jpeg" alt="Dish 4" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800 data-lang-key="dish4-name"">Dal Makhani</h3>
+                    <p class="text-gray-600 mb-4 data-lang-key="dish4-description"">Black lentils simmered overnight with butter and cream, a true delight.</p>
+                    <span class="text-green-700 text-xl font-bold data-lang-key="dish4-price"">$10.00</span>
+                </div>
+            </div>
+            <!-- Menu Item 5 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <img src="download (12).jpeg" alt="Dish 5" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800 data-lang-key="dish5-name"">Naan Bread</h3>
+                    <p class="text-gray-600 mb-4 data-lang-key="dish5-description"">Freshly baked leavened flatbread, perfect with any curry.</p>
+                    <span class="text-green-700 text-xl font-bold data-lang-key="dish5-price"">$3.00</span>
+                </div>
+            </div>
+            <!-- Menu Item 6 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <img src="download (13).jpeg" alt="Dish 6" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800 data-lang-key="dish6-name"">Gulab Jamun</h3>
+                    <p class="text-gray-600 mb-4 data-lang-key="dish6-description"">Deep-fried milk solids soaked in rose-flavored sugar syrup.</p>
+                    <span class="text-green-700 text-xl font-bold data-lang-key="dish6-price"">$5.50</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 px-6 md:px-12 bg-white">
+        <h2 class="text-4xl font-bold text-center mb-12 text-green-700 data-lang-key="about-heading"">About Delicious Bites</h2>
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-lg text-gray-700 leading-relaxed mb-6 data-lang-key="about-paragraph1"">
+                Welcome to Delicious Bites, where culinary tradition meets modern innovation. Our journey began with a simple passion: to bring authentic and delightful flavors to your table. We believe in using only the freshest, locally sourced ingredients to create dishes that not only tantalize your taste buds but also tell a story.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed data-lang-key="about-paragraph2"">
+                From our signature Biryani to our creamy Paneer Tikka Masala, every dish is prepared with meticulous care and a touch of love by our experienced chefs. We are committed to providing an unforgettable dining experience, whether you're joining us for a family meal, a quick lunch, or a special celebration. Come and discover your new favorite dish at Delicious Bites!
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-6 md:px-12 bg-gray-50 rounded-t-xl">
+        <h2 class="text-4xl font-bold text-center mb-12 text-green-700 data-lang-key="contact-heading"">Get in Touch</h2>
+        <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800 data-lang-key="contact-visit-us"">Visit Us</h3>
+                <p class="text-gray-700 mb-2 data-lang-key="contact-address-line1"">123 Foodie Lane,</p>
+                <p class="text-gray-700 mb-2 data-lang-key="contact-address-line2"">Flavor Town, FT 90210</p>
+                <p class="text-gray-700 data-lang-key="contact-city-state"">Culinary State, Country</p>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800 data-lang-key="contact-hours"">Hours of Operation</h3>
+                <p class="text-gray-700 mb-2 data-lang-key="contact-hours-weekdays"">Monday - Friday: 11:00 AM - 10:00 PM</p>
+                <p class="text-gray-700 mb-2 data-lang-key="contact-hours-weekends"">Saturday - Sunday: 12:00 PM - 11:00 PM</p>
+                <h3 class="text-2xl font-semibold mb-4 mt-6 text-gray-800 data-lang-key="contact-reach-us"">Reach Us</h3>
+                <p class="text-gray-700 mb-2 data-lang-key="contact-phone"">Phone: (123) 456-7890</p>
+                <p class="text-gray-700 data-lang-key="contact-email"">Email: info@deliciousbites.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-8 px-6 md:px-12 text-center rounded-t-xl mt-auto">
+        <p class="data-lang-key="footer-text"">&copy; 2024 Delicious Bites. All rights reserved.</p>
+    </footer>
+
+    
+</body>
+</html>
